@@ -3,10 +3,6 @@
 #include "../Head/UserInclude.h"
 
 
-#define     SW_VERSION          "V1.0.1"
-#define     SET_STATUE_OFF      0
-
-
 
 #if 0
 int main()
