@@ -1,0 +1,8 @@
+Modify Date:2024-04-22
+SW Version: V1.0.1
+SW Release Name: FW_TEST_V1.0.1_20240422
+
+Description:
+1. 模仿RTD Scaler芯片系列进行代码架构模拟编写测试；
+2. 基本文件已添加，可用于嵌入式应用层次的程序模拟；
+3. 其他仍待添加；
