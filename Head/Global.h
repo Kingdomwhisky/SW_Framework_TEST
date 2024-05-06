@@ -5,9 +5,13 @@
 #include "stdlib.h"
 //#include "math.h"
 
+//Data Type define
 typedef unsigned char BYTE;     //8 Bit
+typedef unsigned short HWORD;    //16 Bit
 typedef unsigned int  WORD;     //32 Bit
-typedef unsigned long DWORD;    //64 Bit ?
+typedef unsigned long long DWORD;    //64 Bit ?
+
+
 
 #define MAXOF(a, b)                             (((a) > (b)) ? (a) : (b))
 #define MINOF(a, b)                             (((a) < (b)) ? (a) : (b))

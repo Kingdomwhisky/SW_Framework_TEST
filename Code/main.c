@@ -171,7 +171,7 @@ int main()
 #endif
 
 
-#if 1 //Test Analog memory
+#if 0 //Test Analog memory
 
 int main()
 {
@@ -198,6 +198,72 @@ int main()
     printf("%d\n\n",g_stUserData.ucCoderMode);
 
     return 0;    
+}
+
+#endif
+
+
+//Union or Structure Test
+//相同类型的数据会共用内存地址
+#if 0
+union GPIOSEL1_REG gpioreg_test;
+union BIT32_DATA   Bit32data_test;
+
+int main()
+{
+    gpioreg_test.all  =   0xABC07F01;
+
+    printf("gpioreg_test.all = 0x%x\n", gpioreg_test.all);
+
+
+    printf("gpioreg_test.bit.GPIO15 = 0x%x\n", gpioreg_test.bit.GPIO15);
+    printf("gpioreg_test.bit.GPIO14 = 0x%x\n", gpioreg_test.bit.GPIO14);
+
+    printf("gpioreg_test.bit.GPIO1 = 0x%x\n", gpioreg_test.bit.GPIO1);    
+    printf("gpioreg_test.bit.GPIO0 = 0x%x\n", gpioreg_test.bit.GPIO0);
+
+#if 0   //all to one
+    Bit32data_test.data = 0xEF45C6A0;
+    printf("Bit32data_test.data = 0x%x\n", Bit32data_test.data);
+    printf("Bit32data_test.byte.byte3 = 0x%x\n", Bit32data_test.byte.byte3);
+    printf("Bit32data_test.byte.byte2 = 0x%x\n", Bit32data_test.byte.byte2);
+    printf("Bit32data_test.byte.byte1 = 0x%x\n", Bit32data_test.byte.byte1);
+    printf("Bit32data_test.byte.byte0 = 0x%x\n", Bit32data_test.byte.byte0);            
+#endif
+
+#if 1  //one to all
+    Bit32data_test.byte.byte3 = 0xCA;
+    //byte2未赋值，默认为0 (byte2 is not assigned a value and defaults to 0)
+    //byte1未赋值，默认为0 (byte1 is not assigned a value and defaults to 0)
+    Bit32data_test.byte.byte0 = 0x32;
+
+    printf("Bit32data_test.byte.byte3 = 0x%x\n", Bit32data_test.byte.byte3);
+    printf("Bit32data_test.byte.byte2 = 0x%x\n", Bit32data_test.byte.byte2);
+    printf("Bit32data_test.byte.byte1 = 0x%x\n", Bit32data_test.byte.byte1);
+    printf("Bit32data_test.byte.byte0 = 0x%x\n", Bit32data_test.byte.byte0);         
+    printf("Bit32data_test.data = 0x%x\n", Bit32data_test.data);
+
+#endif
+
+    return 0;
+}
+
+#endif
+
+
+//Test the different data's size
+#if 1
+
+int main()
+{
+    printf("sizeof unsigned char = %d\n",sizeof(BYTE));
+    printf("sizeof unsigned short = %d\n",sizeof(HWORD));
+    printf("sizeof unsigned int = %d\n",sizeof(WORD));
+    printf("sizeof unsigned long long = %d\n",sizeof(DWORD));
+    printf("sizeof unsigned long = %d\n",sizeof(long));            
+    printf("\n");
+
+    return 0;
 }
 
 #endif

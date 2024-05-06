@@ -15,3 +15,22 @@ SW Release Name: FW_TEST_V1.0.1_20240428
 Description:
 1. 通过文件的读写操作，使程序达到了记忆存储的功能；
 2. 修改记录，上传git；
+
+
+/*---------------------------------------------------------------------------------------*/
+Modify Date:2024-04-30
+SW Version: V1.0.1
+SW Release Name: FW_TEST_V1.0.1_20240430
+
+Description:
+1. 定义了union（联合体、共用体）的数据结构，联合体可包含结构体；
+2. main.c下程序测试定义的union；
+
+
+/*---------------------------------------------------------------------------------------*/
+Modify Date:2024-05-06
+SW Version: V1.0.1
+SW Release Name: FW_TEST_V1.0.1_20240506
+
+Description:
+1. Test the different data's size;
